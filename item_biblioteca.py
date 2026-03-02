@@ -9,7 +9,10 @@ class Item_biblioteca(ABC):
     
     @abstractmethod
     def exibir_detalhes(self):
-        pass
+        print(f"Código: {self.__codigo}\n"
+              f"Titulo: {self.__titulo}\n"
+              f"Ano: {self.__ano}\n"
+              f"Disponibilidade: {self.__disponivel}")
 
     def emprestar(self, disponivel: bool):
         if disponivel == True:
