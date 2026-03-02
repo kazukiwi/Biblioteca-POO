@@ -3,7 +3,7 @@ from item_biblioteca import Item_biblioteca
 class Livro(Item_biblioteca):
     def __init__(self, codigo, titulo, ano, disponivel, autor: str, num_paginas: int):
         super().__init__(codigo, titulo, ano, disponivel)
-        self.item = "livro"
+        self.item = "Livro"
         self.__autor = autor
         self.__num_paginas = num_paginas
 
@@ -13,5 +13,3 @@ class Livro(Item_biblioteca):
         print(f"Autor: {self.__autor}\n"
               f"Numero de Páginas: {self.__num_paginas}")
         
-livro = Livro(9, "Percy Jackson", 2005, True, "Rick Riordan", 400)
-livro.exibir_detalhes()
