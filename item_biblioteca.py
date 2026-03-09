@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
 
 class Item_biblioteca(ABC):
-    def __init__(self, codigo: str, titulo: str, ano: int, disponivel: bool):
+    def __init__(self, codigo: str, titulo: str, ano: int):
         self.__codigo = codigo
         self.__titulo = titulo
         self.__ano = ano
-        self.__disponivel = disponivel
+        self.__disponivel = True
     
     @abstractmethod
     def exibir_detalhes(self):
@@ -14,17 +14,19 @@ class Item_biblioteca(ABC):
               f"Ano: {self.__ano}\n"
               f"Disponibilidade: {self.__disponivel}")
 
-    def emprestar(self, disponivel: bool):
+    def emprestar(self, disponivel = True):
         if disponivel == True:
-            self.__disponivel = False
             print(f"O livro foi emprestado com sucesso")
-        print(f"O livro já está sendo emprestando 😢")
+            self.__disponivel = False
+        else:
+            print(f"O livro já está sendo emprestando 😢")
 
-    def devolver(self, disponivel: bool):
+    def devolver(self, disponivel = False):
         if disponivel == False:
             self.__disponivel = True
             print(f"O livro foi devolvido com sucesso!")
-        print(f"O livro já foi devolvido!")
+        else:
+            print(f"O livro já foi devolvido!")
 
     def set_codigo(self, codigo: int):
         if codigo > 0:

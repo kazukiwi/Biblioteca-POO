@@ -1,8 +1,8 @@
 from item_biblioteca import Item_biblioteca
 
 class Revista(Item_biblioteca):
-    def __init__(self, codigo, titulo, ano, disponivel, edicao: int, mes: str):
-        super().__init__(codigo, titulo, ano, disponivel)
+    def __init__(self, codigo, titulo, ano, edicao: int, mes: str):
+        super().__init__(codigo, titulo, ano)
         self.item = "Revista"
         self.__edicao = edicao
         self.__mes = mes

@@ -1,8 +1,8 @@
 from item_biblioteca import Item_biblioteca
 
 class Livro(Item_biblioteca):
-    def __init__(self, codigo, titulo, ano, disponivel, autor: str, num_paginas: int):
-        super().__init__(codigo, titulo, ano, disponivel)
+    def __init__(self, codigo, titulo, ano, autor: str, num_paginas: int):
+        super().__init__(codigo, titulo, ano)
         self.item = "Livro"
         self.__autor = autor
         self.__num_paginas = num_paginas
